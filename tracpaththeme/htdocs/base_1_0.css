@@ -1,0 +1,73 @@
+h1:target, h2:target, h3:target, h4:target, h5:target, h6:target,
+span:target {
+  box-shadow: none;
+}
+.trac-ziplink { border-bottom: none }
+input[type=button], input[type=submit], input[type=reset] {
+ text-shadow: none;
+ box-shadow: none;
+}
+input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
+ text-shadow: none;
+ box-shadow: none;
+}
+#mainnav {
+ box-shadow: none;
+}
+#mainnav li {
+ border: 0;  
+}
+#mainnav .first, #mainnav .first :link {
+ border-radius: 0;
+}
+#mainnav .last, #mainnav .last :link {
+ border-radius: 0;
+}
+#mainnav :link, #mainnav :visited {
+ box-shadow: none;
+}
+#mainnav li:hover {
+ border: 0;
+}
+#mainnav :link:hover, #mainnav :visited:hover {
+ box-shadow: none;
+ color: inherit;
+} 
+#mainnav .active {
+ border: 0;
+}
+
+#main #content.admin #tabs {
+ box-shadow: none;
+}
+#main #content.admin #tabs li li.active {
+ box-shadow: none;
+}
+#main #content.admin #tabcontent form.addnew {
+ margin: 1em 0;
+}
+#content #ticket > h2 {
+ background: transparent;
+ border: 0;
+ margin: 6px 12px;
+ padding-left: 0;
+}
+#content #ticket #trac-ticket-title {
+ background: transparent;
+ padding: 0;
+ margin: .8em 12px;
+}
+#content.ticket h3 {
+ margin-bottom: 0;
+}
+.foldable :link, .foldable :visited {
+ color: #fcfcfc;
+ text-shadow: none;
+ box-shadow: none;
+}
+h2 .trac-count, h3 .trac-count {
+ color: #eee;
+} 
+#attachments > div.attachments {
+ padding-top: 1em;
+}

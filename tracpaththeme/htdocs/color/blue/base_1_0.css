@@ -1,0 +1,7 @@
+#content #ticket > h2 :link, 
+#content #ticket > h2 :visited {
+ color: #044697;
+}
+#content h3.foldable {
+ background: #3b7fbf none;
+}

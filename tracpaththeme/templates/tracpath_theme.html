@@ -1,0 +1,76 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:i18n="http://genshi.edgewall.org/i18n"
+      py:strip="">
+
+  <div py:def="navigation(category)" id="${category}" class="nav">
+    <ul py:if="chrome.nav[category]">
+      <li py:for="idx, item in  enumerate(chrome.nav[category])"
+          class="${classes(first_last(idx, chrome.nav[category]), active=item.active)}">${item.label}</li>
+    </ul>
+  </div>
+
+  <py:match path="body" once="true" buffer="false"><body>
+    <div id="banner-container">
+      ${navigation('metanav')}
+      <form id="search" action="${href.search()}" method="get">
+        <div py:if="'SEARCH_VIEW' in perm">
+          <input type="text" id="proj-search" name="q" size="18" accesskey="f" value="" />
+          <input type="submit" value="${_('Search')}" />
+        </div>
+      </form>
+      <div id="banner"><div id="banner-decoration">
+        <div id="header" py:choose="">
+          <a py:when="chrome.logo.src" id="logo" href="${href()}"><img
+            src="${chrome.logo.src}" alt="${chrome.logo.alt}"
+            height="${chrome.logo.height or None}" width="${chrome.logo.width or None}" /></a>
+          <h1 py:otherwise=""><a href="${chrome.logo.link}">${project.name}</a></h1>
+        </div>
+        ${navigation('mainnav')}
+      </div>
+    </div></div>
+
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <xi:include py:if="value_of('resourcepath_template')" href="${resourcepath_template}" />
+        <ul py:if="chrome.ctxtnav">
+          <li py:for="i, elm in enumerate(chrome.ctxtnav)"
+              class="${classes(first_last(i, chrome.ctxtnav))}">$elm</li>
+        </ul>
+        <hr />
+      </div>
+      <div py:if="chrome.warnings" id="warning" class="system-message">
+        <a class="trac-close-msg" href="javascript:void('close')" style="display:none"><span>&times;</span></a>
+        <py:for each="warning in chrome.warnings">
+          <span class="ui-icon ui-icon-alert"></span><div>$warning</div>
+        </py:for>
+      </div>
+      <div py:if="chrome.notices" id="notice" class="system-message">
+        <a class="trac-close-msg" href="javascript:void('close')" style="display:none"><span>&times;</span></a>
+        <py:for each="notice in chrome.notices">
+          <span class="ui-icon ui-icon-info"></span><div>$notice</div>
+        </py:for>
+      </div>
+      ${select('*|text()|comment()')}
+    </div>
+
+    <div id="footer">
+      <div id="copyright" xml:lang="en">
+        <a id="tracpowered" href="http://trac.edgewall.org/"><img src="${chrome.htdocs_location}trac_logo_mini.png" height="30" width="107" alt="Trac Powered"/></a>
+        <p class="left" i18n:msg="version">
+          Powered by <a href="${href.about()}"><strong>Trac ${trac.version}</strong></a><br />
+          By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+        </p>
+        <p class="left rightmost">
+          Theme based on <a href="http://tracpath.com/"><strong>tracpath</strong></a><br/>
+          By <a href="http://www.opengroove.com/">OpenGroove,Inc.</a>
+        </p>
+        <p class="right">${chrome.footer}</p>
+      </div>
+    </div>
+  </body></py:match>
+</html>

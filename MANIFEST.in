@@ -1,0 +1,3 @@
+include COPYING
+graft tracpaththeme/templates
+graft tracpaththeme/htdocs

@@ -1,0 +1,242 @@
+body :link, body :visited, body h1 :link, body h1 :visited, body dt em,
+#content .diff h2 :link, #content .diff h2 :visited
+{
+ color: #044697;
+}
+
+#banner { background: transparent url(banner.png) 0 0 repeat-x }
+#banner-decoration { background: transparent url(banner-decoration.png) 444px 0 no-repeat }
+
+#mainnav li { background-image: url(mainnav-left.png) }
+#mainnav li > :link, #mainnav li > :visited {
+ background-image: url(mainnav-right.png);
+}
+#mainnav li.active { background-position: 0% -32px }
+#mainnav li.active > :link, #mainnav li.active > :visited {
+ background-image: url(mainnav-right.png);
+ color: #234076;
+ background-position: 100% -32px;
+}
+#mainnav li:hover { background-position: 0% -64px }
+#mainnav li:hover > :link, #mainnav li:hover > :visited {
+ background-image: url(mainnav-right.png);
+ color: #234076;
+ background-position: 100% -64px;
+}
+#mainnav li li {
+ color: #111;
+ background: #fff none;
+}
+#mainnav li li.active { background-color: #ccc }
+#mainnav li li > :link, #mainnav li li > :visited,
+#mainnav li li.active > :link, #mainnav li li.active > :visited {
+ color: #111;
+}
+#mainnav li li:hover > :link, #mainnav li li:hover > :visited {
+ color: #fff;
+ background: #326fab none;
+}
+
+#metanav ul { color: #eee }
+#metanav li li > :link, #metanav li li > :visited { color: #111 }
+#metanav li li:hover > :link, #metanav li li:hover > :visited {
+ color: #fff;
+ background: #326fab none;
+}
+
+#content h1 {
+ color: #000;
+ background: #e1edf4 url(h1.png) 100% 100% no-repeat;
+}
+#content h2 {
+ border-width: 1px;
+ border-style: solid;
+ border-color: #5ea2d9 #5ea2d9 #3674af #5ea2d9;
+ -moz-border-radius: 3px;
+ -webkit-border-radius: 3px;
+ border-radius: 3px;
+ background: #3b7fbf none 50% 100% repeat-x;
+}
+#content .milestone .info h2 :link, #content .milestone .info h2 :visited {
+ color: #eee;
+ border-bottom: none;
+}
+#content h2 :link, #content h2 :visited,
+#content .milestone .info h2 :link em,
+#content .milestone .info h2 :visited em {
+ color: #fcfcfc;
+ border-bottom: 1px dotted #eee;
+}
+#content h2 :link:hover, #content h2 :visited:hover,
+#content .milestone .info h2 :link em:hover,
+#content .milestone .info h2 :visited em:hover {
+ color: #fff;
+}
+#content .milestone .info h2 :link em,
+#content .milestone .info h2 :visited em {
+ display: inline; /* for Safari */
+}
+#content h2 .missing:link, #content h2 .missing:visited { color: #ccc }
+#content h2 .missing:link:hover, #content h2 .missing:visited:hover { color: #111 }
+#content h3 {
+ color: #333;
+ background: transparent url(h3.png) 50% bottom repeat-x;
+}
+#content .diff h2 :link:hover, #content .diff h2 :visited:hover { color: #555 }
+
+#content.ticket #ticket {
+ background: #ded583;
+ border-width: 1px;
+ border-style: solid;
+ border-color: #e2da92 #e2da92 #b5b395 #e2da92;
+ -moz-border-radius: 3px;
+ -webkit-border-radius: 3px;
+ border-radius: 3px;
+}
+#content.ticket #ticket table.properties { background: #faf9ed }
+#content.ticket #ticket .description {
+ background: #faf9ed url(ticket.png) 50% 100% repeat-x;
+}
+#content.ticket .collapsed > .foldable {
+ background-image: url(ticket-h2-collapsed.png);
+ border-color: #5ea2d9 #5ea2d9 #407aae #5ea2d9;
+ -moz-border-radius: 3px;
+ -webkit-border-radius: 3px;
+ border-radius: 3px;
+}
+#content.ticket #attachments > div, #content.ticket #changelog, #content.ticket #modify {
+ background: #fcfbf0 url(expanded-bottom.png) 50% bottom repeat-x;
+ border-width: 1px;
+ border-color: #ececec #ececec #407aae #ececec;
+ border-style: solid;
+ -moz-border-radius: 0 0 3px 3px;
+ -webkit-border-radius: 0 0 3px 3px;
+ border-radius: 0 0 3px 3px;
+}
+
+#content.milestone #stats {
+ padding: 0;
+ background: #eee none;
+ border: 1px solid #ccc;
+ -moz-border-radius: 3px;
+ -webkit-border-radius: 3px;
+ border-radius: 3px;
+}
+#content.milestone #stats fieldset {
+ margin: 0;
+ border: none;
+}
+#content.milestone #stats legend {
+ padding: 3px 0;
+ color: #333;
+}
+
+#main #content.admin #tabs {
+ background: transparent none;
+ border: none;
+}
+#main #content.admin #tabs li {
+ background: #ded583 none;
+ color: #333;
+ -moz-border-radius: 3px 3px 0 0;
+ -webkit-border-radius: 3px 3px 0 0;
+ border-radius: 3px 3px 0 0;
+}
+#main #content.admin #tabs li ul { border-top: 1px solid #b7a931 }
+#main #content.admin #tabs li li {
+ border-width: 1px;
+ border-color: #ded583;
+ border-style: none none solid none;
+ -moz-border-radius: 0;
+ -webkit-border-radius: 0;
+ border-radius: 0;
+ background: #f8f7e4 none;
+}
+#main #content.admin #tabs li li.active { background-color: #fff }
+#main #content.admin #tabs li li:hover { background-color: #e1edf4 }
+#main #content.admin #tabcontent h2 { color: #eee }
+#main #content.admin #tabcontent form.addnew {
+ background: #eee none;
+ border: 1px solid #ccc;
+ -moz-border-radius: 3px;
+ -webkit-border-radius: 3px;
+ border-radius: 3px;
+}
+#main #content.admin #tabcontent form.addnew fieldset { border: none }
+#main #content.admin #tabcontent form.addnew legend {
+ padding: 3px 0;
+ color: #333;
+}
+
+#content.dashboard ul#toggle-starred-nav li {
+ color: #333;
+ background: #eee none;
+}
+#content.dashboard ul#toggle-starred-nav li.active {
+ color: #fff;
+ background: #1f4b74 none;
+}
+
+input[type=button], input[type=submit], input[type=reset], button {
+ border-width: 1px;
+ border-style: solid;
+ -moz-border-radius: 3px;
+ -webkit-border-radius: 3px;
+ border-radius: 3px;
+ color: #fff;
+ border-color: #4f7ca3 #4f7ca3 #2d5d87 #4f7ca3;
+ background: transparent url(button.png) 50% 0px repeat-x;
+}
+input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover, button:hover {
+ color: #fff;
+ border-color: #457498 #457498 #1f435e #457498;
+ background: transparent url(button.png) 50% -48px repeat-x;
+ -webkit-transition: background-position 0.075s linear;
+ -moz-transition: background-position 0.075s linear;
+ -ms-transition: background-position 0.075s linear;
+ -o-transition: background-position 0.075s linear;
+ transition: background-position 0.075s linear;
+}
+.delete input[type=button], .delete input[type=submit], .delete button,
+#delete input[type=button], #delete input[type=submit],
+#delete button, #deletemilestone input[type=submit],
+.admin input[type=submit][name=remove],
+.admin input[type=submit][name=delete] {
+ border-color: #7d7d7d #7d7d7d #595959 #7d7d7d;
+ background-position: 50% -144px;
+}
+.delete input[type=button]:hover, .delete input[type=submit]:hover, .delete button:hover,
+#delete input[type=button]:hover, #delete input[type=submit]:hover,
+#delete button:hover, #deletemilestone input[type=submit]:hover,
+.admin input[type=submit][name=remove]:hover,
+.admin input[type=submit][name=delete]:hover {
+ border-color: #636363 #636363 #2d2d2d #636363;
+ background-position: 50% -192px;
+}
+input[type=button][disabled], input[type=button][disabled]:hover,
+input[type=submit][disabled], input[type=submit][disabled]:hover,
+input[type=reset][disabled], input[type=reset][disabled]:hover,
+button[disabled], button[disabled]:hover,
+#delete input[type=button][disabled], #delete input[type=button][disabled]:hover,
+#delete input[type=submit][disabled], #delete input[type=submit][disabled]:hover,
+#delete button[disabled], #delete button[disabled]:hover,
+#deletemilestone input[type=submit][disabled], #deletemilestone input[type=submit][disabled]:hover,
+.admin input[type=submit][name=remove][disabled], .admin input[type=submit][name=remove][disabled]:hover,
+.admin input[type=submit][name=delete][disabled], .admin input[type=submit][name=delete][disabled]:hover
+{
+ color: #666;
+ border-color: #d4d4d4 #d4d4d4 #b7b7b7 #d4d4d4;
+ background-position: 50% -96px;
+}
+
+body #prefs {
+ background: #e9f0d7;
+ border: 1px solid #d9d9d9;
+ -moz-border-radius: 3px;
+ -webkit-border-radius: 3px;
+ border-radius: 3px;
+}
+
+body table.listing thead { background: #e7e1a5 none }
+body table.listing thead :link, body table.listing thead :visited { color: #8d4123 }
+body table.listing th.asc, body table.listing th.desc { background-color: #e7e1a5 }
