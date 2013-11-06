@@ -15,7 +15,7 @@ from trac.web.api import IRequestFilter
 from trac.web.chrome import Chrome, ITemplateProvider, add_script, \
                             add_stylesheet
 
-from themeengine.api import ThemeBase
+from themeengine.api import ThemeBase, ThemeEngineSystem
 
 
 __all__ = ['TracpathTheme']
@@ -35,7 +35,7 @@ class TracpathTheme(ThemeBase):
         return handler
 
     def post_process_request(self, req, template, data, content_type):
-        if template and self.is_active_theme:
+        if template and self._is_active:
             self._add_jquery_ui(req)
             add_script(req, 'tracpaththeme/base.js')
         return template, data, content_type
@@ -63,6 +63,14 @@ class TracpathTheme(ThemeBase):
         info['screenshot'] = 'htdocs/screenshot_%s.png' % color
 
         return info
+
+    @property
+    def _is_active(self):
+        try:
+            theme = ThemeEngineSystem(self.env).theme
+        except:
+            return False
+        return theme and theme.get('name', '').startswith('tracpath_')
 
     if hasattr(Chrome, 'add_jquery_ui'):
         def _add_jquery_ui(self, req):
