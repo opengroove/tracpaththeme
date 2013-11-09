@@ -63,7 +63,6 @@ table.listing thead th {
  padding: 3px .5em;
 }
 table.listing thead tr { background: inherit }
-table.listing th.asc a, table.listing th.desc a { font-weight: normal }
 table.listing tbody tr { border-top: 1px solid #e0e0e0 }
 table.listing tbody tr:hover { background: #bedce6 }
 .suggestions ul { font-family: sans-serif }
@@ -711,38 +710,46 @@ body .trac-nav, body .trac-topnav, body div.trac-modifiedby {
  font-size: 92.3%;
 }
 
-body #content .paging { font-size: 92.3% }
-body #content .paging .current { 
- color: #222;
- background: #fff none;
- padding: 2px 8px;
- border: 1px solid #ccc;
- -moz-border-radius: 3px;
- -webkit-border-radius: 3px;
- border-radius: 3px;
- cursor: default;
-}
-
-body #content .paging :link, body #content .paging :visited {
- background: transparent url(button-small.png) 50% 0px repeat-x;
- padding: 2px 8px;
- border: 1px solid #ccc;
+body #content .paging {
+ display: table;
+ padding: 0;
+ margin: 1em auto 0;
+ line-height: inherit;
+ font-size: 100%;
+ border: 1px solid #ccc9c7;
+ *border: none;
  -moz-border-radius: 3px;
  -webkit-border-radius: 3px;
  border-radius: 3px;
 }
-body #content .paging :link:hover, body #content .paging :visited:hover {
- color: #000;
- border-color: #999;
- background-color: #fff;
+body #content .paging > span {
+ display: table-cell;
+ *display: inline-block;
+ width: 2em;
+ text-align: center;
+ border-left: 1px solid #ccc9c7;
+ padding: 0;
+ margin: 0;
 }
-
+body #content .paging > span:first-child { border-left-style: none }
+body #content .paging .current,
+body #content .paging :link,
+body #content .paging :visited {
+ display: block;
+ width: 100%;
+ line-height: 2.0;
+ border: none;
+ padding: 0;
+ background: transparent;
+ color: #4e4d4c;
+}
 body #content .paging .previous a,
-body #content .paging .next a {
- background: transparent none;
- border-style: none;
- padding: 2px 0;
-}
+body #content .paging .next a { font-size: 100% }
+body #content .paging .current { background-color: #f1eeeb }
+body #content .paging :link:hover,
+body #content .paging :visited:hover,
+body #content .paging .previous a:hover,
+body #content .paging .next a:hover { color: #4e4d4c; background-color: #f1eeeb }
 
 body #pagepath {
  margin: 0;
